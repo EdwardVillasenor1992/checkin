@@ -32,8 +32,15 @@ public interface UserTableDao {
     @Query("select * from UserTable where user_sign_in_id = :userID")
     UserTable findUserByID(String userID);
 
-    @Query("select * from UserTable where user_sign_in_id  = :id or first_Name = :fname or last_name = :lname")
-    List<UserTable> contactInfo(String id,String fname, String lname);
+
+    @Query("select * from UserTable where user_sign_in_id  = :id")
+    List<UserTable> contactInfoId(String id);
+
+    @Query("select * from UserTable where first_Name = :fname")
+    List<UserTable> contactInfoFname(String fname);
+
+    @Query("select * from UserTable where last_name = :lname")
+    List<UserTable> contactInfoLname(String lname);
 
     @Delete
     public void deleteUsers(UserTable users);

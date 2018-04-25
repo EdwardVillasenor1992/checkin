@@ -45,6 +45,12 @@ public class AdminPage extends AppCompatActivity {
                 startActivity(new Intent(AdminPage.this,ContactInfo.class));
             }
         });
+        mDeleteUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminPage.this, DeleteUser.class));
+            }
+        });
 
 
 

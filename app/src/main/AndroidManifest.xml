@@ -19,7 +19,8 @@
         <activity android:name=".AdminPage" />
         <activity android:name=".AddUser" />
         <activity android:name=".CheckingLog" />
-        <activity android:name=".ContactInfo"></activity>
+        <activity android:name=".ContactInfo" />
+        <activity android:name=".DeleteUser"></activity>
     </application>
 
 </manifest>

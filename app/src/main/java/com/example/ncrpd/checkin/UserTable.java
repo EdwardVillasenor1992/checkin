@@ -109,14 +109,6 @@ public class UserTable {
         this.mEmergencyContactNum2 = mEmergencyContactNum2;
     }
 
-//    public String getmDate() {
-//        return mDate;
-//    }
-//
-//    public void setmDate(String mDate) {
-//        this.mDate = mDate;
-//    }
-
     public String getUserSignInId() {
         return userSignInId;
     }
@@ -131,5 +123,18 @@ public class UserTable {
 
     public void setmParent2(String mParent2) {
         this.mParent2 = mParent2;
+    }
+
+    @Override
+    public String toString() {
+        return "UserTable{" +
+                "mFirstName='" + mFirstName + '\'' +
+                ", mLastName='" + mLastName + '\'' +
+                ", userSignInId='" + userSignInId + '\'' +
+                ", mParent1='" + mParent1 + '\'' +
+                ", mEmergencyContactNum1='" + mEmergencyContactNum1 + '\'' +
+                ", mParent2='" + mParent2 + '\'' +
+                ", mEmergencyContactNum2='" + mEmergencyContactNum2 + '\'' +
+                '}';
     }
 }
