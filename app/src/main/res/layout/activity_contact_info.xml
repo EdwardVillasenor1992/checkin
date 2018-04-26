@@ -45,19 +45,22 @@
 
 
 
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="6dp"
         android:id="@+id/line2"
+        android:layout_below="@+id/find_by_id"
         android:background="#000000"/>
 
-
     <ListView
+        android:layout_below="@+id/line2"
         android:id="@+id/listview_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:dividerHeight="22dp"
         android:paddingLeft="22dp"
         android:paddingRight="22dp"

@@ -121,7 +121,6 @@ public class AddUser extends AppCompatActivity {
         });
 
 
-
     }
     boolean checkname(String mFirstNameString, String mLastNameString, String mUseridString)
     {
@@ -150,4 +149,5 @@ public class AddUser extends AppCompatActivity {
 
         return true;
     }
+
 }

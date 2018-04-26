@@ -2,6 +2,7 @@ package com.example.ncrpd.checkin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -41,7 +42,7 @@ public class ContactInfo extends AppCompatActivity {
         lnameEdit = findViewById(R.id.find_Lname);
         idEdit = findViewById(R.id.find_by_id);
 
-        fname = fnameEdit.getText().toString();
+
         lname = lnameEdit.getText().toString();
         id = idEdit.getText().toString();
 
@@ -50,6 +51,7 @@ public class ContactInfo extends AppCompatActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER))
                 {
+                    String fname = fnameEdit.getText().toString();
                     searchByFname(fname);
                     return true;
                 }
@@ -63,11 +65,12 @@ public class ContactInfo extends AppCompatActivity {
 
     private void searchByFname(String fname)
     {
+        Log.d("TESTEST", fname+"TERERERSFAF");
         List<UserTable> userlist = db.userTableDao().contactInfoFname(fname);
-
         if (mAdapter == null) {
+            Log.d("MYTEST", fname + "HELLO");
             Toast.makeText(this, "in if statement", Toast.LENGTH_SHORT).show();
-            mAdapter = new ArrayAdapter<UserTable>(this,R.layout.activity_contact_info, R.id.listview_contact, userlist);
+            mAdapter = new ArrayAdapter<UserTable>(this,R.layout.list_of_users, R.id.user_contact_info, userlist);
             lsContact.setAdapter(mAdapter);
         } else {
             mAdapter.clear();

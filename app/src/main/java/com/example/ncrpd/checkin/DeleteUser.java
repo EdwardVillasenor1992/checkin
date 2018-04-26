@@ -32,17 +32,22 @@ public class DeleteUser extends AppCompatActivity {
         mLnameEdit = findViewById(R.id.delete_last_name);
         midEdit = findViewById(R.id.delete_id);
 
-        mFname = mFnameEdit.getText().toString();
-        mLname = mLnameEdit.getText().toString();
-        mid = midEdit.getText().toString();
+
+
 
 
         button = findViewById(R.id.delete_btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                UserTable user = db.userTableDao().findUserByID(mid);
-//                db.userTableDao().deleteUsers(user);
+                mid = midEdit.getText().toString();
+                mFname = mFnameEdit.getText().toString();
+                mLname = mLnameEdit.getText().toString();
+
+                db.userTableDao().deleteUser(mFname, mLname, mid);
+
+
+
             }
         });
 

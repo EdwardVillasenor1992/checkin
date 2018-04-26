@@ -42,6 +42,9 @@ public interface UserTableDao {
     @Query("select * from UserTable where last_name = :lname")
     List<UserTable> contactInfoLname(String lname);
 
+    @Query("DELETE from usertable where first_Name = :fname and last_name = :lname and user_sign_in_id = :id")
+    public void deleteUser(String fname, String lname, String id);
+
     @Delete
     public void deleteUsers(UserTable users);
 
