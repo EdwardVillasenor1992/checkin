@@ -127,14 +127,12 @@ public class UserTable {
 
     @Override
     public String toString() {
-        return "UserTable{" +
-                "mFirstName='" + mFirstName + '\'' +
-                ", mLastName='" + mLastName + '\'' +
-                ", userSignInId='" + userSignInId + '\'' +
-                ", mParent1='" + mParent1 + '\'' +
-                ", mEmergencyContactNum1='" + mEmergencyContactNum1 + '\'' +
-                ", mParent2='" + mParent2 + '\'' +
-                ", mEmergencyContactNum2='" + mEmergencyContactNum2 + '\'' +
-                '}';
+        return  "Name: " + mFirstName + " " + mLastName + "\n"+
+                "Pin: " + userSignInId + "\n"+
+                "DOB: " + mBirthDay + "\n" +
+                "Guardian 1: " + mParent1 + '\n' +
+                "Guardian 1 phone: " + mEmergencyContactNum1 + '\n' +
+                "Guardian 2: " + mParent2 + '\n' +
+                "Guardian 2 phone: " + mEmergencyContactNum2;
     }
 }
