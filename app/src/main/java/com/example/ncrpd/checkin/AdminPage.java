@@ -11,6 +11,7 @@ public class AdminPage extends AppCompatActivity {
     private Button mCheckLogBtn;
     private Button mEmergencyContact;
     private Button mDeleteUserBtn;
+    private Button mLogOutBtn;
     private DB db;
 
 
@@ -26,6 +27,7 @@ public class AdminPage extends AppCompatActivity {
         mCheckLogBtn = findViewById(R.id.check_log_btn);
         mEmergencyContact = findViewById(R.id.emergency_contact_btn);
         mDeleteUserBtn = findViewById(R.id.delete_user_btn);
+        mLogOutBtn = findViewById(R.id.log_out_btn);
 
         mAddUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,13 @@ public class AdminPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminPage.this,ContactInfo.class));
+            }
+        });
+        mLogOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminPage.this,MainActivity.class));
+                finish();
             }
         });
         mDeleteUserBtn.setOnClickListener(new View.OnClickListener() {

@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which){
-
+                                mUserId.setText("");
                             }
                         });
 
