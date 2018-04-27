@@ -2,6 +2,7 @@ package com.example.ncrpd.checkin;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.provider.CalendarContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private Button mSignInBtn;
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         String first = db.userTableDao().findUserByID(mUserIdString).getmFirstName();
                         String last = db.userTableDao().findUserByID(mUserIdString).getmLastName();
                         String id = db.userTableDao().findUserByID(mUserIdString).getUserSignInId();
+
                         String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
                         CheckinLogTable newCheckin = new CheckinLogTable(first, last, id, mydate);
