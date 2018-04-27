@@ -15,6 +15,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
     private Button mSignInBtn;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         String last = db.userTableDao().findUserByID(mUserIdString).getmLastName();
                         String id = db.userTableDao().findUserByID(mUserIdString).getUserSignInId();
 
-                        String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+                        String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles")).getTime());
 
                         CheckinLogTable newCheckin = new CheckinLogTable(first, last, id, mydate);
 
