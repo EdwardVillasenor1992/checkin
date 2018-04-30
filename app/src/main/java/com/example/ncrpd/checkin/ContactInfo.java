@@ -59,6 +59,21 @@ public class ContactInfo extends AppCompatActivity {
             }
         });
 
+        lnameEdit.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER))
+                {
+                    Toast.makeText(ContactInfo.this, "in if statement", Toast.LENGTH_SHORT).show();
+                    String lname = lnameEdit.getText().toString();
+                    searchByLname(lname);
+                    return true;
+                }
+                return false;
+            }
+
+        });
+
 
 
     }
@@ -68,8 +83,6 @@ public class ContactInfo extends AppCompatActivity {
         Log.d("TESTEST", fname+"TERERERSFAF");
         List<UserTable> userlist = db.userTableDao().contactInfoFname(fname);
         if (mAdapter == null) {
-            Log.d("MYTEST", fname + "HELLO");
-            Toast.makeText(this, "in if statement", Toast.LENGTH_SHORT).show();
             mAdapter = new ArrayAdapter<UserTable>(this,R.layout.list_of_users, R.id.user_contact_info, userlist);
             lsContact.setAdapter(mAdapter);
         } else {
@@ -78,6 +91,26 @@ public class ContactInfo extends AppCompatActivity {
             mAdapter.notifyDataSetChanged();
         }
     }
+
+
+    private void searchByLname(String lname)
+    {
+        List<UserTable> userlist = db.userTableDao().contactInfoLname(lname);
+        if (mAdapter == null) {
+            mAdapter = new ArrayAdapter<UserTable>(this,R.layout.list_of_users, R.id.user_contact_info, userlist);
+            lsContact.setAdapter(mAdapter);
+        } else {
+            mAdapter.clear();
+            mAdapter.addAll(userlist);
+            mAdapter.notifyDataSetChanged();
+        }
+    }
+
+
+
+
+
+
 
 
     boolean checkString(String fname, String lname, String id)
