@@ -43,7 +43,6 @@ public class ContactInfo extends AppCompatActivity {
         idEdit = findViewById(R.id.find_by_id);
 
 
-        lname = lnameEdit.getText().toString();
         id = idEdit.getText().toString();
 
         fnameEdit.setOnKeyListener(new View.OnKeyListener() {
@@ -74,6 +73,19 @@ public class ContactInfo extends AppCompatActivity {
 
         });
 
+        idEdit.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER))
+                {
+                    String id = idEdit.getText().toString();
+                    searchByid(id);
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
 
     }
@@ -96,6 +108,19 @@ public class ContactInfo extends AppCompatActivity {
     private void searchByLname(String lname)
     {
         List<UserTable> userlist = db.userTableDao().contactInfoLname(lname);
+        if (mAdapter == null) {
+            mAdapter = new ArrayAdapter<UserTable>(this,R.layout.list_of_users, R.id.user_contact_info, userlist);
+            lsContact.setAdapter(mAdapter);
+        } else {
+            mAdapter.clear();
+            mAdapter.addAll(userlist);
+            mAdapter.notifyDataSetChanged();
+        }
+    }
+
+    private void searchByid(String id)
+    {
+        List<UserTable> userlist = db.userTableDao().contactInfoId(id);
         if (mAdapter == null) {
             mAdapter = new ArrayAdapter<UserTable>(this,R.layout.list_of_users, R.id.user_contact_info, userlist);
             lsContact.setAdapter(mAdapter);
