@@ -22,15 +22,15 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="133dp"
-        android:text="Check Log" />
+        android:text="Check In Log" />
 
     <Button
         android:id="@+id/emergency_contact_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="204dp"
+        android:layout_marginBottom="177dp"
         android:text="emergency contact" />
 
     <Button
@@ -48,6 +48,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="198dp"
+        android:layout_marginBottom="103dp"
         android:text="log out" />
+
+    <Button
+        android:id="@+id/check_out_log_btn"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="208dp"
+        android:text="Check out log" />
 </RelativeLayout>

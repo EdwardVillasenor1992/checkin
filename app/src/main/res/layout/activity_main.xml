@@ -26,7 +26,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="215dp"
+        android:layout_alignStart="@+id/user_id_login"
+        android:layout_marginBottom="217dp"
         android:text="sign in" />
+
+    <Button
+        android:id="@+id/check_out_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/user_id_login"
+        android:layout_alignTop="@+id/sign_in_btn"
+        android:text="CHECKOUT" />
 </RelativeLayout>

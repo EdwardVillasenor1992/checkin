@@ -11,11 +11,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-@Database(entities = {UserTable.class, CheckinLogTable.class}, version = 2, exportSchema = false)
+@Database(entities = {UserTable.class, CheckinLogTable.class, CheckOutTable.class}, version = 3, exportSchema = false)
 public abstract class DB extends RoomDatabase {
     private static DB sDB;
     public abstract UserTableDao userTableDao();
     public abstract CheckinLogTableDao checkinLogTableDao();
+    public abstract CheckOutTableDao checkOutTableDao();
 
     private static final Object sLock = new Object();
 

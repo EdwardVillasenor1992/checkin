@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class AdminPage extends AppCompatActivity {
     private Button mAddUserBtn;
@@ -12,6 +13,7 @@ public class AdminPage extends AppCompatActivity {
     private Button mEmergencyContact;
     private Button mDeleteUserBtn;
     private Button mLogOutBtn;
+    private Button mCheckOutlogBtn;
     private DB db;
 
 
@@ -28,6 +30,7 @@ public class AdminPage extends AppCompatActivity {
         mEmergencyContact = findViewById(R.id.emergency_contact_btn);
         mDeleteUserBtn = findViewById(R.id.delete_user_btn);
         mLogOutBtn = findViewById(R.id.log_out_btn);
+        mCheckOutlogBtn = findViewById(R.id.check_out_log_btn);
 
         mAddUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +42,12 @@ public class AdminPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminPage.this, CheckingLog.class));
+            }
+        });
+        mCheckOutlogBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminPage.this, CheckOutLog.class));
             }
         });
         mEmergencyContact.setOnClickListener(new View.OnClickListener() {

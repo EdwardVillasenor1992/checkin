@@ -20,7 +20,9 @@
         <activity android:name=".AddUser" />
         <activity android:name=".CheckingLog" />
         <activity android:name=".ContactInfo" />
-        <activity android:name=".DeleteUser"></activity>
+        <activity android:name=".DeleteUser" />
+        <activity android:name=".CheckOutLog" />
+        <activity android:name=".AlarmReceiverActivity"></activity>
     </application>
 
 </manifest>
